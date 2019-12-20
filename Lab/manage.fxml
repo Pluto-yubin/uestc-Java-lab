@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Lab.Controller">
+
+    <children>
+      <TabPane prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab fx:id="stu_tab" text="Students'info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="354.0" prefWidth="601.0">
+                     <children>
+                        <TextFlow layoutX="14.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="stu_name" onAction="#setStu_name" promptText="name" />
+                              <TextField fx:id="stu_sex" onAction="#setStu_sex" promptText="sex" />
+                              <TextField fx:id="stu_age" onAction="#setStu_age" promptText="age" />
+                              <TextField fx:id="stu_sid" onAction="#setStu_sid" promptText="sid" />
+                              <TextField fx:id="stu_major" onAction="#setStu_major" promptText="major" />
+                           </children>
+                        </TextFlow>
+                        <Text layoutX="14.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入学生信息" />
+                        <Button fx:id="stu_continue" layoutX="119.0" layoutY="296.0" mnemonicParsing="false" onAction="#setStu_continue" text="继续" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab fx:id="tea_tab" text="Teachers'info">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="355.0" prefWidth="600.0">
+                     <children>
+                        <TextFlow layoutX="14.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="tea_name" promptText="name" />
+                              <TextField fx:id="tea_sex" promptText="sex" />
+                              <TextField fx:id="tea_age" promptText="age" />
+                              <TextField fx:id="tea_tid" promptText="tid" />
+                              <TextField fx:id="tea_title" promptText="title" />
+                           </children>
+                        </TextFlow>
+                        <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入教师信息" />
+                        <Button fx:id="tea_continue" layoutX="119.0" layoutY="298.0" mnemonicParsing="false" onAction="#setTea_continue" text="继续" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab fx:id="cou_tab" text="Courses'info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextFlow layoutX="14.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="cou_cname" promptText="cname" />
+                              <TextField fx:id="cou_cid" promptText="cid" />
+                              <TextField fx:id="cou_chour" promptText="chour" />
+                           </children>
+                        </TextFlow>
+                        <Text layoutX="14.0" layoutY="63.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入课程信息" />
+                        <Button fx:id="cou_continue" layoutX="114.0" layoutY="292.0" mnemonicParsing="false" onAction="#setCou_continue" text="继续" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="sch_tab" text="Schedules'info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextFlow layoutX="14.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="sch_classid" promptText="classid" />
+                              <TextField fx:id="sch_cid" promptText="cid" />
+                              <TextField fx:id="sch_tid" promptText="tid" />
+                              <TextField fx:id="sch_classroom" promptText="classroom" />
+                           </children>
+                        </TextFlow>
+                        <Text layoutX="14.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入课表信息" />
+                        <Button fx:id="sch_continue" layoutX="119.0" layoutY="290.0" mnemonicParsing="false" onAction="#setSch_continue" text="继续" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab fx:id="ele_tab" text="Electivecourse'info">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TextFlow layoutX="14.0" layoutY="77.0" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="ele_elid" promptText="elid" />
+                              <TextField fx:id="ele_sid" promptText="sid" />
+                              <TextField fx:id="ele_classid" promptText="classid" />
+                           </children>
+                        </TextFlow>
+                        <Text layoutX="14.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入选课信息" />
+                        <Button fx:id="ele_continue" layoutX="114.0" layoutY="288.0" mnemonicParsing="false" onAction="#setEle_continue" text="继续" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab  text="Check">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Text layoutX="72.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="请输入要查询的学号" />
+                        <TextField fx:id="find_sid" layoutX="216.0" layoutY="47.0" />
+                        <Text layoutX="72.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="课程名称" />
+                        <TextField fx:id="show_cname" layoutX="216.0" layoutY="82.0" />
+                        <Text layoutX="72.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="上课地点" />
+                        <TextField fx:id="show_classroom" layoutX="216.0" layoutY="117.0" />
+                        <TextField fx:id="show_tid" layoutX="216.0" layoutY="151.0" />
+                        <Text layoutX="72.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="老师编号" />
+                        <Button fx:id="check_button" layoutX="266.0" layoutY="290.0" mnemonicParsing="false" text="确定" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
