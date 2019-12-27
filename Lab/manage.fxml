@@ -118,7 +118,7 @@
                         <TextField fx:id="show_classroom" layoutX="216.0" layoutY="117.0" />
                         <TextField fx:id="show_tid" layoutX="216.0" layoutY="151.0" />
                         <Text layoutX="72.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="老师编号" />
-                        <Button fx:id="check_button" layoutX="266.0" layoutY="290.0" mnemonicParsing="false" text="确定" />
+                        <Button fx:id="check_button" layoutX="266.0" layoutY="290.0" onAction="#check" mnemonicParsing="false" text="确定" />
                      </children>
                   </AnchorPane>
               </content>

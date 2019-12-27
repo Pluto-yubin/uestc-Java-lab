@@ -18,12 +18,12 @@ class MyObjectOutputStream extends ObjectOutputStream {
 }
 class Myfile implements Serializable{
     File opfile = new File(".");
-    protected Person[] people = new Person[5];
-    Student[] students = new Student[5];
-    Teacher[] teachers = new  Teacher[5];
-    Course[] courses = new Course[6];
-    Schedule[] schedules = new Schedule[5];
-    Electivecourse[] electivecourses = new Electivecourse[5];
+    protected Person[] people = new Person[10];
+    Student[] students = new Student[10];
+    Teacher[] teachers = new  Teacher[10];
+    Course[] courses = new Course[10];
+    Schedule[] schedules = new Schedule[10];
+    Electivecourse[] electivecourses = new Electivecourse[10];
     Myfile(File file) throws IOException {
         this.opfile = file;
         if(!file.exists()) {

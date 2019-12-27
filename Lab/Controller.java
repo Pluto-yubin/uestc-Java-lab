@@ -186,10 +186,12 @@ public class Controller implements Initializable {
             studnets_file.students[i].setSid(setStu_sid());
             studnets_file.students[i].setMajor(setStu_major());
             studnets_file.students[i].display();
-            i++;
+
             try {
                 studnets_file.Writefile(studnets_file.students[i]);
-            } catch (IOException ex) {
+                i++;
+                studnets_file.readfile(studnets_file.students);
+            } catch (IOException | ClassNotFoundException ex) {
                 ex.printStackTrace();
             }
 
@@ -238,9 +240,10 @@ public class Controller implements Initializable {
             teachers_file.teachers[i].setTid(setTea_tid());
             teachers_file.teachers[i].setTitle(setTea_title());
             teachers_file.teachers[i].display();
-            i++;
+
             try {
                 teachers_file.Writefile(teachers_file.teachers[i]);
+                i++;
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -278,9 +281,10 @@ public class Controller implements Initializable {
             cou_file.courses[i].setChour(setCou_chour());
             cou_file.courses[i].setCid(setCou_cid());
             cou_file.courses[i].display();
-            i++;
+
             try {
                 cou_file.Writefile(cou_file.courses[i]);
+                i++;
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -320,9 +324,10 @@ public class Controller implements Initializable {
             schedules_file.schedules[i].setClassrome(setSch_classroom());
             schedules_file.schedules[i].setTid(setSch_tid());
             schedules_file.schedules[i].display();
-            i++;
+
             try {
                 schedules_file.Writefile(schedules_file.schedules[i]);
+                i++;
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -355,11 +360,6 @@ public class Controller implements Initializable {
  //       ele_continue.setOnAction((ActionEvent e) -> {
             judge = "N";
 
-//            try {
-//                elec_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\elec.txt"));
-//            } catch (IOException ex) {
-//                ex.printStackTrace();
-//            }
             for(int j = 0; j < elec_file.electivecourses.length; j++)
                 elec_file.electivecourses[j] = new Electivecourse(null, null, null);
 
@@ -368,9 +368,10 @@ public class Controller implements Initializable {
             elec_file.electivecourses[i].setElid(setEle_elid());
             elec_file.electivecourses[i].setSid(setEle_sid());
             elec_file.electivecourses[i].display();
-            i++;
+
             try {
                 elec_file.Writefile(elec_file.electivecourses[i]);
+                i++;
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -380,19 +381,22 @@ public class Controller implements Initializable {
         ele_elid.setText("");
 
     }
-    public void check() {
+    public void check() throws IOException, ClassNotFoundException {
+
+        elec_file.readfile(elec_file.electivecourses);
+//        System.out.println("TEST");
         String sid = find_sid.getText();
-        for(int i = 0; i < elec_file.electivecourses.length; i++) {          // 通过学号来找选课类
+        for(int i = 0; i < 5; i++) {          // 通过学号来找选课类
             if(sid.compareTo(elec_file.electivecourses[i].getSid()) == 0 ) {
-                for(int j = 0; j < schedules_file.schedules.length; j++) {         //通过选课类中的classid找schedule， 输出schedule中的classroom
+                for(int j = 0; j < 5; j++) {         //通过选课类中的classid找schedule， 输出schedule中的classroom
                     if(elec_file.electivecourses[i].getClassid().compareTo(schedules_file.schedules[j].getClassid()) == 0) {
                         show_classroom.setText(schedules_file.schedules[j].getClassrome());
-                        for(int k = 0; k < cou_file.courses.length; k++) {           //通过schedule中的cid找course
+                        for(int k = 0; k < 5; k++) {           //通过schedule中的cid找course
                             if(schedules_file.schedules[j].getCid().compareTo(cou_file.courses[k].getCid()) == 0) {
                                 show_cname.setText(cou_file.courses[k].getCname());
                             }
                         }
-                        for(int k = 0; k < teachers_file.teachers.length; k++ ) {     //通过schedule中的tid找teacher
+                        for(int k = 0; k < 5; k++ ) {     //通过schedule中的tid找teacher
                             if(schedules_file.schedules[j].getTid().compareTo(teachers_file.teachers[k].getTid()) == 0) {
                                 show_tid.setText(teachers_file.teachers[k].getName());
                             }

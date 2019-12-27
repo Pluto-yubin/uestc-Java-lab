@@ -9,27 +9,27 @@ public class TestMyfile {
     protected static int length = 1;
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         Myfile people_file = new Myfile(new File("D:\\CASTLE\\src\\Lab\\People.txt"));
-        WritePerson(people_file);
-        people_file.readfile(people_file.people);
+//        WritePerson(people_file);
+//        people_file.readfile(people_file.people);
 
         Myfile studnets_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Students.txt"));
         WriteStudent(studnets_file);
         studnets_file.readfile(studnets_file.students);
 
         Myfile teachers_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Teachers.txt"));
-        WriteTeachers(teachers_file);
+ //       WriteTeachers(teachers_file);
         teachers_file.readfile(teachers_file.teachers);
 
         Myfile courses_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Courses.txt"));
-        WriteCourses(courses_file);
+//        WriteCourses(courses_file);
         courses_file.readfile(courses_file.courses);
 
         Myfile schedule_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Schedule.txt"));
-        WriteSchedlue(schedule_file);
+//        WriteSchedlue(schedule_file);
         schedule_file.readfile(schedule_file.schedules);
 
         Myfile elec_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\elec.txt"));
-        WriteElec(elec_file);
+//        WriteElec(elec_file);
         elec_file.readfile(elec_file.electivecourses);
         System.out.println("Please enter sid");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
