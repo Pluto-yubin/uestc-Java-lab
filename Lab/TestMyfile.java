@@ -8,53 +8,54 @@ import java.io.InputStreamReader;
 public class TestMyfile {
     protected static int length = 1;
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        Myfile people_file = new Myfile(new File("D:\\CASTLE\\src\\Lab\\People.txt"));
-//        WritePerson(people_file);
-//        people_file.readfile(people_file.people);
+        Myfile people_file = new Myfile(new File("People.txt"));
+        WritePerson(people_file);
+        people_file.readfile(people_file.people);
 
-        Myfile studnets_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Students.txt"));
+        Myfile studnets_file = new Myfile(new File("Students.txt"));
         WriteStudent(studnets_file);
         studnets_file.readfile(studnets_file.students);
 
-        Myfile teachers_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Teachers.txt"));
- //       WriteTeachers(teachers_file);
+        Myfile teachers_file = new Myfile(new File("Teachers.txt"));
+        WriteTeachers(teachers_file);
         teachers_file.readfile(teachers_file.teachers);
 
-        Myfile courses_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Courses.txt"));
-//        WriteCourses(courses_file);
+        Myfile courses_file = new Myfile(new File("Courses.txt"));
+        WriteCourses(courses_file);
         courses_file.readfile(courses_file.courses);
 
-        Myfile schedule_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Schedule.txt"));
-//        WriteSchedlue(schedule_file);
+        Myfile schedule_file = new Myfile(new File("Schedule.txt"));
+        WriteSchedlue(schedule_file);
         schedule_file.readfile(schedule_file.schedules);
 
-        Myfile elec_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\elec.txt"));
-//        WriteElec(elec_file);
+        Myfile elec_file = new Myfile(new File("elec.txt"));
+        WriteElec(elec_file);
         elec_file.readfile(elec_file.electivecourses);
+
         System.out.println("Please enter sid");
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         String sid = bufferedReader.readLine();
-            for(int i = 0; i < elec_file.electivecourses.length; i++) {          // 通过学号来找选课类
-                if(sid.compareTo(elec_file.electivecourses[i].getSid()) == 0 ) {
-                    for(int j = 0; j < schedule_file.schedules.length; j++) {         //通过选课类中的classid找schedule， 输出schedule中的classroom
-                        if(elec_file.electivecourses[i].getClassid().compareTo(schedule_file.schedules[j].getClassid()) == 0) {
-                            System.out.println("上课教室为" + schedule_file.schedules[j].getClassrome());
-                            for(int k = 0; k < courses_file.courses.length; k++) {           //通过schedule中的cid找course
-                                if(schedule_file.schedules[j].getCid().compareTo(courses_file.courses[k].getCid()) == 0) {
-                                    System.out.println("课程名称为" + courses_file.courses[k].getCname());    //输出课程名称
-                                }
+        for(int i = 0; i < 5; i++) {          // 通过学号来找选课类
+            if(sid.compareTo(elec_file.electivecourses[i].getSid()) == 0 ) {
+                for(int j = 0; j < 5; j++) {         //通过选课类中的classid找schedule， 输出schedule中的classroom
+                    if(elec_file.electivecourses[i].getClassid().compareTo(schedule_file.schedules[j].getClassid()) == 0) {
+                        System.out.println("上课教室为" + schedule_file.schedules[j].getClassrome());
+                        for(int k = 0; k < 5; k++) {           //通过schedule中的cid找course
+                            if(schedule_file.schedules[j].getCid().compareTo(courses_file.courses[k].getCid()) == 0) {
+                                System.out.println("课程名称为" + courses_file.courses[k].getCname());    //输出课程名称
                             }
-                            for(int k = 0; k < teachers_file.teachers.length; k++ ) {     //通过schedule中的tid找teacher
-                                if(schedule_file.schedules[j].getTid().compareTo(teachers_file.teachers[k].getTid()) == 0) {
-                                    System.out.println("教师名字为" + teachers_file.teachers[k].getName());
-                                }
+                        }
+                        for(int k = 0; k < 5; k++ ) {     //通过schedule中的tid找teacher
+                            if(schedule_file.schedules[j].getTid().compareTo(teachers_file.teachers[k].getTid()) == 0) {
+                                System.out.println("教师名字为" + teachers_file.teachers[k].getName());
                             }
                         }
                     }
                 }
             }
-            System.out.println("If not information output, it means sid not found");
         }
+        System.out.println("If not information output, it means sid not found");
+    }
 
     private static void WritePerson(Myfile myfile) throws IOException {
 
@@ -244,8 +245,8 @@ public class TestMyfile {
     private static void WriteElec(Myfile myfile) throws IOException {
         String s = new String();
         String elid = new String();
-         String sid = new String();
-         String classid = new String();
+        String sid = new String();
+        String classid = new String();
         for(int j = 0; j < myfile.electivecourses.length; j++)
             myfile.electivecourses[j] = new Electivecourse(null, null, null);
         length = 1;

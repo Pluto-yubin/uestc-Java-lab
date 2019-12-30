@@ -172,7 +172,7 @@ public class Controller implements Initializable {
             judge = "N";
             Myfile studnets_file = null;
             try {
-                studnets_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Students.txt"));
+                studnets_file = new Myfile(new File("Students.txt"));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -223,7 +223,7 @@ public class Controller implements Initializable {
     public String  setTea_title() {
         return tea_title.getText();
     }
-    Myfile teachers_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Teachers.txt"));
+    Myfile teachers_file = new Myfile(new File("Teachers.txt"));
     public void setTea_continue() {
 //        System.out.println("start");
         i = 0;
@@ -268,7 +268,7 @@ public class Controller implements Initializable {
     public int setCou_chour() {
         return Integer.parseInt(cou_chour.getText());
     }
-    Myfile cou_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Courses.txt"));
+    Myfile cou_file = new Myfile(new File("Courses.txt"));
     public void setCou_continue() {
 //        System.out.println("start");
         i = 0;
@@ -309,7 +309,7 @@ public class Controller implements Initializable {
     public String setSch_tid( ) {
         return sch_tid.getText();
     }
-    Myfile schedules_file = new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\Schedules.txt"));
+    Myfile schedules_file = new Myfile(new File("Schedule.txt"));
     public void setSch_continue() {
         System.out.println("start");
         i = 0;
@@ -352,7 +352,7 @@ public class Controller implements Initializable {
         return ele_sid.getText();
     }
 
-    Myfile elec_file =new Myfile(new File("D:\\CASTLE\\JAVA_GUI\\src\\Lab\\elec.txt"));
+    Myfile elec_file =new Myfile(new File("elec.txt"));
 
     public void setEle_continue() {
         System.out.println("start");
@@ -384,6 +384,9 @@ public class Controller implements Initializable {
     public void check() throws IOException, ClassNotFoundException {
 
         elec_file.readfile(elec_file.electivecourses);
+        cou_file.readfile(cou_file.courses);
+        schedules_file.readfile(schedules_file.schedules);
+        teachers_file.readfile(teachers_file.teachers);
 //        System.out.println("TEST");
         String sid = find_sid.getText();
         for(int i = 0; i < 5; i++) {          // 通过学号来找选课类
